@@ -2,11 +2,61 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>averycrespi.com</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Avery Crespi is a software engineer building agent tooling, developer infrastructure, games, and browser extensions."
+    />
+    <title>Avery Crespi</title>
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    TODO
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <main id="main" class="terminal" aria-labelledby="page-title">
+      <header class="terminal__header" aria-label="Terminal window header">
+        <div class="terminal__controls" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <p>averycrespi.com</p>
+      </header>
+
+      <section class="terminal__body">
+        <p class="prompt"><span>avery@site</span>:~$ whoami</p>
+        <h1 id="page-title">Avery Crespi</h1>
+        <p class="output">
+          Senior software engineer at <a href="https://moz.com/">Moz</a>. Passionate about
+          bouldering, <a href="https://en.wikipedia.org/wiki/Seeing_Like_a_State">systems thinking</a>,
+          and teaching the robots how to replace me.
+        </p>
+
+        <p class="prompt"><span>avery@site</span>:~$ cat areas_of_interest.txt</p>
+        <ul class="plain-list output" aria-label="Current focus areas">
+          <li>Hyper-personal software: tools shaped to the exact contour of one life</li>
+          <li>Brokered agent capabilities: credentials out of reach, policy at the boundary</li>
+          <li>Plan-execute-review loops: durable artifacts, scoped work, independent review</li>
+        </ul>
+
+        <p class="prompt"><span>avery@site</span>:~$ ls projects/</p>
+        <div class="project-list output" aria-label="Selected projects">
+          <article>
+            <h2><a href="https://github.com/averycrespi/agent-config">agent-config</a></h2>
+            <p>My configuration for working with AI coding agents.</p>
+          </article>
+          <article>
+            <h2><a href="https://github.com/averycrespi/agent-tools">agent-tools</a></h2>
+            <p>My tools for working with AI coding agents.</p>
+          </article>
+        </div>
+
+        <p class="prompt"><span>avery@site</span>:~$ open links</p>
+        <nav class="links output" aria-label="External links">
+          <a href="https://github.com/averycrespi">github</a>
+          <a href="https://github.com/averycrespi/averycrespi.com">source</a>
+        </nav>
+      </section>
+    </main>
   </body>
 </html>

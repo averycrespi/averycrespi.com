@@ -11,7 +11,7 @@
 
 - `index.html` is the current homepage.
 - `CNAME` configures the custom domain for GitHub Pages and should remain `averycrespi.com` unless Avery explicitly asks to change it.
-- There is currently no build system, package manager, or test runner configured. Prefer plain HTML/CSS/JavaScript for small changes.
+- The site uses Vite as a lightweight dev server/build tool. Prefer plain HTML/CSS/JavaScript for small changes.
 
 ## Public Repo and Sensitive Information
 
@@ -30,8 +30,8 @@
 
 ## Verification
 
-- For HTML-only changes, inspect the file directly and, when possible, open or serve the page locally to check rendering.
-- If scripts or styles are added, verify browser console output and expected behavior.
+- For local development, run `npm install` once and `npm run dev` for Vite's live-reloading server.
+- For HTML/CSS/JavaScript changes, run `npm run build` and, when possible, open or serve the page locally to check rendering and browser console output.
 - Before reporting work complete, check `git status --short` and summarize changed files.
 
 ## Git and Deployment Notes

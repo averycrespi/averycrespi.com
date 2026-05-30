@@ -1,0 +1,255 @@
+:root {
+  color-scheme: dark;
+  --bg: #070908;
+  --terminal: #0d1110;
+  --terminal-soft: #121816;
+  --text: #d8e0d6;
+  --muted: #87918a;
+  --dim: #5f6963;
+  --green: #9cff8f;
+  --amber: #f4c06a;
+  --red: #ff7a7a;
+  --blue: #82cfff;
+  --line: #24302b;
+  --shadow: 0 24px 90px rgba(0, 0, 0, 0.45);
+  --mono: ui-monospace, "SFMono-Regular", "Cascadia Code", "Liberation Mono", Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: clamp(16px, 4vw, 48px);
+  color: var(--text);
+  font-family: var(--mono);
+  background:
+    radial-gradient(circle at 50% -20%, rgba(156, 255, 143, 0.12), transparent 34rem),
+    linear-gradient(rgba(156, 255, 143, 0.025) 1px, transparent 1px),
+    var(--bg);
+  background-size: auto, 100% 3px, auto;
+}
+
+a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  outline: none;
+}
+
+.skip-link {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  padding: 8px 10px;
+  color: var(--bg);
+  background: var(--green);
+  border-radius: 6px;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.terminal {
+  width: min(100%, 920px);
+  margin: 0 auto;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--terminal) 92%, black);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.terminal__header {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 14px;
+  color: var(--muted);
+  background: var(--terminal-soft);
+  border-bottom: 1px solid var(--line);
+}
+
+.terminal__header p {
+  margin: 0;
+  overflow: hidden;
+  font-size: 0.82rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.terminal__controls {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 7px;
+}
+
+.terminal__controls span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--red);
+}
+
+.terminal__controls span:nth-child(2) {
+  background: var(--amber);
+}
+
+.terminal__controls span:nth-child(3) {
+  background: var(--green);
+}
+
+.terminal__body {
+  padding: clamp(18px, 4vw, 40px);
+}
+
+.prompt {
+  margin: 0 0 10px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.prompt::before {
+  color: var(--green);
+  content: "❯ ";
+}
+
+.prompt span {
+  color: var(--blue);
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 12px;
+  color: var(--text);
+  font-size: clamp(2rem, 8vw, 4.75rem);
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  line-height: 0.95;
+}
+
+h1::after {
+  display: inline-block;
+  width: 0.55ch;
+  height: 0.9em;
+  margin-left: 0.14em;
+  vertical-align: -0.08em;
+  background: var(--green);
+  content: "";
+  animation: blink 1.1s steps(2, start) infinite;
+}
+
+.output {
+  margin: 0 0 clamp(26px, 5vw, 42px);
+  color: var(--text);
+  line-height: 1.75;
+}
+
+.output:last-child {
+  margin-bottom: 0;
+}
+
+.plain-list {
+  padding-left: 1.2rem;
+}
+
+.plain-list li::marker {
+  color: var(--green);
+}
+
+.project-list {
+  display: grid;
+  gap: 14px;
+}
+
+.project-list article {
+  padding: 14px 16px;
+  background: rgba(216, 224, 214, 0.025);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.project-list h2 {
+  margin-bottom: 5px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.project-list h2::before {
+  color: var(--dim);
+  content: "./";
+}
+
+.project-list p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.links a {
+  display: inline-flex;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.links a::before {
+  color: var(--dim);
+  content: "--";
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  h1::after {
+    animation: none;
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: 10px;
+  }
+
+  .terminal {
+    border-radius: 10px;
+  }
+
+  .terminal__header {
+    gap: 10px;
+    padding-inline: 10px;
+  }
+}
