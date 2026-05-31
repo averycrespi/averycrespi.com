@@ -209,6 +209,47 @@ h1::after {
   line-height: 1.55;
 }
 
+.post-list {
+  display: grid;
+  gap: 4px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.post-list li {
+  display: grid;
+  grid-template-columns: 10ch 5ch 12ch minmax(0, 1fr);
+  gap: 1ch;
+  align-items: baseline;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.post-list time,
+.post-mode,
+.post-owner {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.post-list a {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.post-content {
+  max-width: 68ch;
+}
+
+.post-content p {
+  margin: 0 0 1.1rem;
+}
+
+.post-content p:last-child {
+  margin-bottom: 0;
+}
+
 .links {
   display: flex;
   flex-wrap: wrap;
@@ -251,5 +292,13 @@ h1::after {
   .terminal__header {
     gap: 10px;
     padding-inline: 10px;
+  }
+
+  .post-list li {
+    grid-template-columns: 5ch 12ch minmax(0, 1fr);
+  }
+
+  .post-mode {
+    display: none;
   }
 }

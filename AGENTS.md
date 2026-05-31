@@ -28,6 +28,13 @@
 - Use relative paths for local assets so the site works correctly on GitHub Pages.
 - When adding assets, use descriptive filenames and keep file sizes reasonable.
 
+## Site Conventions
+
+- Preserve the terminal-style presentation. Use prompt text consistently with the current page path, e.g. `avery@site:~$` on the homepage and `avery@site:~/blog$` on blog pages.
+- Use `open links` for navigation sections across pages. Keep the existing `--` prefix styling for navigation links.
+- Blog listings should look like compact `ls -l` output: one line per post, with mode, owner `avery`, full date including year, and the rendered post filename such as `hello-world.html`.
+- The homepage blog section should appear below projects and above links, show recent posts only, and link to the full blog from the main links section.
+
 ## Verification
 
 - For local development, run `npm install` once and `npm run dev` for Vite's live-reloading server.
