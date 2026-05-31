@@ -34,6 +34,7 @@
 - Use `open links` for navigation sections across pages. Keep the existing `--` prefix styling for navigation links.
 - Blog listings should look like compact `ls -l` output: one line per post, with mode, owner `avery`, full date including year, and the rendered post filename such as `hello-world.html`.
 - The homepage blog section should appear below projects and above links, show recent posts only, and link to the full blog from the main links section.
+- Treat blog post content as human-written. Do not rewrite, rephrase, summarize, or otherwise change post prose unless Avery explicitly asks; formatting-only fixes are okay.
 
 ## Verification
 
